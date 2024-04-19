@@ -4,13 +4,14 @@ import bg from "./assets/animal.png";
 import { onBeforeUnmount, onMounted } from "vue";
 
 const arcPaletteList = [
+  "not-arc",
   "arc-palette-one",
   "arc-palette-two",
   "arc-palette-three",
 ];
 function setArcPaletteCls(num: number) {
   arcPaletteList.forEach((cls, index) => {
-    if (index == num - 1) {
+    if (index == num) {
       if (!document.documentElement.classList.contains(cls)) {
         document.documentElement.classList.add(cls);
       }
@@ -19,18 +20,30 @@ function setArcPaletteCls(num: number) {
     }
   });
 }
+function setIsNotArc(flag: boolean) {
+  if (!flag) {
+    document.body.classList.add("not-arc");
+  } else {
+    document.body.classList.remove("not-arc");
+  }
+}
 
 function updateArcPalette() {
   const computedStyle = document.documentElement.computedStyleMap();
 
   if (computedStyle.get("--arc-background-gradient-overlay-color0")) {
     setArcPaletteCls(3);
+    setIsNotArc(true);
   } else if (computedStyle.get("--arc-background-gradient-color0")) {
     setArcPaletteCls(2);
+    setIsNotArc(true);
   } else if (computedStyle.get("--arc-background-simple-color")) {
     setArcPaletteCls(1);
+    setIsNotArc(true);
   } else {
-    console.log("none");
+    setArcPaletteCls(3);
+    // not arc -> preset palette
+    setIsNotArc(false);
   }
 }
 

@@ -3,49 +3,26 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+/* adapt other browser */
+.not-arc {
+  --arc-background-gradient-overlay-color1: #e57ca7ff;
+  --arc-palette-backgroundExtra: #160903ff;
+  --arc-background-gradient-overlay-color0: #00000000;
+  --arc-background-gradient-color1: #e5dc7cff;
+  --arc-palette-hover: #b06f567a;
+  --arc-palette-minContrastColor: #953c1eff;
+  --arc-palette-cutoutColor: #953c1eff;
+  --arc-palette-foregroundTertiary: #e5967cff;
+  --arc-background-gradient-color0: #e5967cff;
+  --arc-palette-foregroundSecondary: #e5967cff;
+  --arc-palette-title: #eee1dcff;
+  --arc-palette-background: #2c1207ff;
+  --arc-palette-subtitle: #7d7573ff;
+  --arc-palette-maxContrastColor: #faebe6ff;
+  --arc-palette-focus: #a86045ce;
+  --arc-palette-foregroundPrimary: #faebe6ff;
+}
 :root {
-  --palette-cutoutColor: var(--arc-palette-cutoutColor, #244ec2ff);
-  --palette-focus: var(--arc-palette-focus, #4b70cdce);
-  --palette-hover: var(--arc-palette-hover, #5b7dd27a);
-  --palette-title: var(--arc-palette-title, #dde4f5ff);
-  --palette-subtitle: var(--arc-palette-subtitle, #75777eff);
-  --palette-background: var(--arc-palette-background, #09173aff);
-  --palette-backgroundExtra: var(--arc-palette-backgroundExtra, #040c1dff);
-  --palette-foregroundPrimary: var(--arc-palette-foregroundPrimary, #ebeffbff);
-  --palette-foregroundSecondary: var(
-    --arc-palette-foregroundSecondary,
-    #7793e5ff
-  );
-  --palette-foregroundTertiary: var(
-    --arc-palette-foregroundTertiary,
-    #597ce0ff
-  );
-  --palette-minContrastColor: var(--arc-palette-minContrastColor, #244ec2ff);
-  --palette-maxContrastColor: var(--arc-palette-maxContrastColor, #ebeffbff);
-  /* 2-3个颜色时出现 */
-  --background-gradient-color0: var(
-    --arc-background-gradient-color0,
-    var(--arc-background-simple-color, #597ce0ff)
-  );
-  --background-gradient-color1: var(
-    --arc-background-gradient-color1,
-    var(--arc-background-simple-color, #9059e0ff)
-  );
-  /* 三个颜色时出现 */
-  --background-gradient-overlay-color0: var(
-    --arc-background-gradient-overlay-color0,
-    var(--background-gradient-color1, #00000000)
-  );
-  --background-gradient-overlay-color1: var(
-    --arc-background-gradient-overlay-color1,
-    var(--background-gradient-color0, #59d6e0ff)
-  );
-  --background-simple-color: var(
-    --arc-background-simple-color,
-    var(--arc-background-gradient-color0)
-  );
-
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -58,27 +35,4 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.arc-palette-one {
-  --theme-background: var(--arc-background-simple-color);
-}
-.arc-palette-two {
-  --theme-background: linear-gradient(
-    to right top,
-    var(--arc-background-gradient-color0),
-    var(--arc-background-gradient-color1)
-  );
-}
-.arc-palette-three {
-  --theme-background: linear-gradient(
-      to bottom,
-      var(--arc-background-gradient-overlay-color0),
-      var(--arc-background-gradient-overlay-color1)
-    ),
-    linear-gradient(
-      to right,
-      var(--arc-background-gradient-color0),
-      var(--arc-background-gradient-color1)
-    );
 }
