@@ -16,9 +16,9 @@ import ArcIcon from "./arc-icon.vue";
     <div class="tab-box">
       <router-link
         class="tab"
-        :to="`/website/${encodeURIComponent('https://dorakika.cn')}`"
+        :to="`/website/${encodeURIComponent('https://dorakika.life')}`"
       >
-        <img class="ico" src="https://dorakika.cn/favicon.ico" alt="DORAKIKA" />
+        <img class="ico" src="https://dorakika.life/favicon.ico" alt="DORAKIKA" />
         <span class="text">DORAKIKA</span>
       </router-link>
       <router-link
